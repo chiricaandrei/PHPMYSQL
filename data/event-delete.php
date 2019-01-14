@@ -2,16 +2,12 @@
 // Include config file
 require_once "../process/config.php";
 
-var_dump($_POST);
-$denumire=  $_POST['denumire'];
-$locatie =  $_POST['locatie'];
-$data    =  $_POST['data'];
-$invitati=  $_POST['invitati'];
+$id=  $_POST['id'];
 // Prepare an insert statement
-$sql = "INSERT INTO events (denumire_eveniment, locatie_eveniment, data, numar_invitati) VALUES (?, ?, ?, ?)";
+$sql = "DELETE FROM events WHERE id = ?";
 if($stmt = mysqli_prepare($link, $sql)){
     // Bind variables to the prepared statement as parameters
-    mysqli_stmt_bind_param($stmt, "sssi", $denumire, $locatie, $data, $invitati);
+    mysqli_stmt_bind_param($stmt, "i", $id);
     
     // Attempt to execute the prepared statement
     if(mysqli_stmt_execute($stmt)){

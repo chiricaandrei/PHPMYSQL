@@ -20,65 +20,49 @@ session_start();
             </div>
 
             <div class="col-sm-8 text-left">
-                <table id="table_events" class="display" style="width:100%">
+                <table id="table_users" class="display" style="width:100%">
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Denumire</th>
-                            <th>Locatie</th>
-                            <th>Data</th>
-                            <th>Numar invitati</th>
+                            <th>Username</th>
+                            <th>Rol</th>
                             <th>Modificare</th>
-                            <th>Stergere</th>
                         </tr>
                     </thead>
                 </table>
             </div>
         </div>
-        <?php
-        if($_SESSION["id-rol"] == 1)
-        {
-        ?>
+
         <div class="row">
             <div class="col-sm-2 sidenav">
 
             </div>
             <div class ="col-sm-8">
-                <form id="form_edit">
+                <form id="form_user">
                     <div class="form-group">
                         <input type="hidden" class="form-control" id="form_id" >
                     </div>
                     <div class="form-group">
-                        <label for="form_denumire">Denumire</label>
-                        <input type="text" class="form-control" id="form_denumire" placeholder="Introduceti Denumirea">
+                        <label for="form_username">Username</label>
+                        <input type="text" class="form-control" id="form_username" placeholder="Introduceti username">
                     </div>
                     <div class="form-group">
-                        <label for="form_locatie">Locatie</label>
-                        <input type="text" class="form-control" id="form_locatie" placeholder="Introduceti locatia">
+                        <label for="form_rol">Rol</label>
+                        <select id="form_rol">
+                            <option value="1">Administrator</option>
+                            <option value="2">Vizitator</option>
+                        </select>
                     </div>
-
-                    <div class="form-group">
-                        <label for="form_data">Data</label>
-                        <input type="date" class="form-control" id="form_data" placeholder="Introduceti data">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="form_invitati">Numar invitati</label>
-                        <input type="number" class="form-control" id="form_invitati" placeholder="Introduceti numarul de invitati">
-                    </div>
-
                     <div class="form-group row">
                         <div class="offset-sm-2 col-sm-7 pull-right">
-                            <button type="submit" class="btn btn-primary">Editati evenimentul</button>
+                            <button type="submit" class="btn btn-primary">Editati userul</button>
                         </div>
                     </div>
                 </form>
 
             </div>
         </div>
-        <?php
-            }   
-        ?>
+        
     </div>
 
 
@@ -93,7 +77,7 @@ session_start();
 
 
     <!-- Explicit Page scripts -->
-    <script src="scripts/welcome.js"></script>
+    <script src="scripts/users.js"></script>
 
 </body>
 

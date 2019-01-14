@@ -20,11 +20,18 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="welcome.php">Evenimente</a></li>
             <li><a href="create.php">Cerere Eveniment</a></li>
-            <li><a href="#">Configurari Admin</a></li>
-            <li><a href="#">Users</a></li>
+            <?php
+              if($_SESSION["id-rol"] == 1)
+              {
+            ?>
+            <li><a href="users.php">Users</a></li>
+            <?php
+              }
+            ?>
             <li><a href="#">Contact</a></li>
+            <li><a href="logout.php">Logout</a></li>
 
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container -->
- </nav><!-- /.navbar -->
+ </nav>
